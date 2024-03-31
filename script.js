@@ -85,6 +85,9 @@ function startGame(){
 }
 
 function gameOver(){
+    timing = 0;
+    udarWav.stop();
+    otskokWav.stop();
     gameTheme.stop();
     const cur_score = parseInt(score.textContent);
     const best_score = parseInt(best.textContent.split(' ')[1]);
