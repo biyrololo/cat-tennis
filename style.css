@@ -45,7 +45,7 @@ main{
 
 #racket[data-active="true"]{
     opacity: 1;
-    animation: bounce 0.6s linear;
+    animation: bounce calc(0.6s * var(--anim-scale)) linear;
 }
 
 #racket[data-active="hidden"]{
@@ -83,8 +83,8 @@ main{
 }
 
 #ball[data-active="true"]{
-    animation: move 1.5s linear infinite;
-    animation-delay: 1.5s;
+    animation: move calc(1.5s * var(--anim-scale)) linear infinite;
+    /* animation-delay: calc(1.5s * var(--anim-scale)); */
     opacity: 0;
 }
 
@@ -95,8 +95,8 @@ main{
         rotate: 0deg;
         scale: 4;
     }
-    25%{
-        top: calc(var(--cat-width) * 0.8 * -1);
+    20%{
+        top: calc(var(--cat-width) * 1.2 * -1);
         rotate: 180deg;
         scale: 2.5;
     }
@@ -106,13 +106,13 @@ main{
         scale: 0.8;
     }
     75%{
-        top: calc(var(--cat-width) * 0.8 * -1);
+        top: calc(var(--cat-width) * 0.7 * -1);
         rotate: 180deg;
         scale: 2.5;
     }
     100%{
         top: calc(var(--cat-width) * 0.2 * -1);
-        rotate: 0deg;
+        rotate: 20deg;
         scale: 4;
         opacity: 1;
     }
