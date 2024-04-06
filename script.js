@@ -28,11 +28,13 @@ var anims_timeouts = new Array(6);
 const THEMES = [
     {
         color: '#005e27', 
-        image: 'cat.png'
+        image: 'cat.png',
+        ball: 'ball.png'
     }, 
     {
         color: '#570208',
-        image: 'evil_cat.png'
+        image: 'evil_cat.png',
+        ball: 'strawberry.png'
     }
 ];
 
@@ -201,10 +203,12 @@ function hit(){
         if(newScore % 10 >= 5){
             main.style = `--main-color: ${THEMES[1].color};`;
             cat.src = `static/${THEMES[1].image}`;
+            ball.src = `static/${THEMES[1].ball}`;
         }
         else{
             main.style = `--main-color: ${THEMES[0].color};`;
             cat.src = `static/${THEMES[0].image}`;
+            ball.src = `static/${THEMES[0].ball}`;
         }
     }
 }
@@ -218,6 +222,7 @@ function renderMenu(){
     const newSrc = `static/${THEMES[0].image}`
     if(cat.src != newSrc){
         cat.src = newSrc;
+        ball.src = `static/${THEMES[0].ball}`;
     }
     hitBtn.addEventListener('click', startGame);
 }
