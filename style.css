@@ -1,11 +1,38 @@
 @font-face {
-    font-family: 'pixel font';
+    font-family: 'pixel font 2';
     src: url('static/pixel_font.TTF');
+}
+
+@font-face {
+    font-family: 'pixel font';
+    src: url('static/joystix\ monospace.otf');
 }
 
 body{
     font-family: 'pixel font';
     margin: 0;
+    background-color: #e5e5f7;
+}
+
+body > #bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.6;
+    background-color: #e5e5f7;
+    background-image:  radial-gradient(#0b9224 2px, transparent 2px), radial-gradient(#0b9224 2px, #e5e5f7 2px);
+    background-size: 80px 80px;
+    background-position: 0 0,40px 40px;
+}
+
+body[data-theme="red"] > #bg{
+    background-color: #e5e5f7;
+    background-image:  radial-gradient(#d71515 2px, transparent 2px), radial-gradient(#d71515 2px, #e5e5f7 2px);
+    background-size: 80px 80px;
+    background-position: 0 0,40px 40px;
 }
 
 main{
@@ -154,6 +181,7 @@ main{
 
 #score-block #score{
     font-size: 50px;
+    font-family: 'pixel font 2';
 }
 
 #score-block #best{
